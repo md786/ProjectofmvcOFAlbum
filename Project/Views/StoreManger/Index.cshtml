@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Project.Models.Album>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-hover table-bordered " id="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AlbumTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArtistName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>Operations</th>
+    </tr>
+</thead>
+    <tfoot>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArtistName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>Operations</th>
+        </tr>
+    </tfoot>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlbumTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArtistName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Albumid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Albumid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Albumid })
+        </td>
+    </tr>
+}
+</tbody>
+</table>
+<script src="~/scripts/jquery-3.1.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#table thead").css("background-color", "#e6ffe6");
+        $("#table tfoot").css("background-color", "#fff3e6");
+      //  $("#table  tbody tr").css("background-color", "#ffe6ff");
+        $("#table tbody tr").css("background-color", "#e6ffff");
+        $("#table").DataTable();
+    });
+</script>

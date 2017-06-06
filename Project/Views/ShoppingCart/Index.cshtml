@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Project.Models.Cart>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Check Out", "Confirm")
+    </p>
+    <table class="table table-bordered table-responsive table-hover ">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Album.AlbumTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Album.UnitPrice)
+            </th>
+
+            <th></th>
+        </tr>
+        @{int total = 0; }
+        @foreach (var item in Model)
+        {
+            total = total + ((int)item.Quantity * item.Album.UnitPrice);
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Album.AlbumTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Album.UnitPrice)
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Recordid })
+                </td>
+
+            </tr>
+        }
+        @{Session["total"] = total;
+            <tr>
+                <td colspan="4">Total Amount :@total</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿@using Project.Models
+@model IEnumerable<Album>
+@{
+    ViewBag.Title = "Index";
+    var collection = ViewBag.cat;
+}
+<div id="d1">
+    <a id="a1" href="#">
+        <img src="~/Images/images.jpg" />
+    </a>
+    @foreach (var item in collection)
+    {
+        <ul id="u1">
+            <li><a href="/Home/Browse?strCaegory=@item">@item</a></li>
+    </ul>
+    }
+   
+    </div>
+<br /><br /><br /><br /><br />
+
+<p>-          TOP 5 Album               -</p>
+<br />
+<div id="d2">
+    @foreach (var item in Model)
+    {
+        <a id="a2" href="/Home/Details/@item.Albumid">
+
+            <img src="~/Images/stock-vector-set-of-hand-drawn-music-notes-118643290.jpg" /> <br /> <span>@item.AlbumTitle</span></a>
+    }
+</div>
+<br />
+<br />
+
+
+
+<link href="~/Content/myprojectstylesheet.css" rel="stylesheet" />
+
+@*<style>
+    #d1{
+       
+       
+    }
+    #d1 img{
+       width:1000px;
+       height:250px;
+        border:2px solid black;
+        float:right;
+    }
+
+
+
+
+    #d2{
+        width:940px;
+        height:200px;
+        
+        padding:5px;
+        margin:5px;
+    }
+    #a2 {
+        
+        float:left;
+        margin:10px;
+        margin:10px;
+       
+        
+    }
+    #a2 img{
+        width:140px;
+        height:45px;
+         border:2px solid black;
+    }
+    #a2 span{
+        width:20px;
+        height:15px;
+        font-size:15px;
+        font-style:italic;
+        text-align:center;
+
+    }
+    ul{
+        list-style:none;
+        font-style:italic;
+       text-decoration:underline;
+    }
+</style>*@
+
+
+

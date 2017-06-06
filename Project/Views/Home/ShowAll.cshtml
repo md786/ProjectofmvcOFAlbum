@@ -1,0 +1,12 @@
+﻿@using Project.Models
+@model IEnumerable<Album>
+@{
+    ViewBag.Title = "ShowAll";
+}
+
+<h2>All Music Available In The Store</h2>
+<br />
+@Html.Partial("~/Views/_AlbumDetailsid.cshtml", Model)
+
+<link href="~/Content/myprojectstylesheet.css" rel="stylesheet" />
+

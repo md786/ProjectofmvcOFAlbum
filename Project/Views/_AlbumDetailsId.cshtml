@@ -1,0 +1,13 @@
+﻿@using Project.Models
+@model IEnumerable<Album>
+<br />
+<div id="d2">
+    @foreach (var item in Model)
+    {
+        <a id="a2" href="/Home/Details/@item.Albumid">
+
+            <img src="~/Images/stock-vector-set-of-hand-drawn-music-notes-118643290.jpg" /> <br /> <span>@item.AlbumTitle</span>
+        </a>
+    }
+</div>
+<br />

@@ -1,0 +1,49 @@
+﻿body {
+}
+ #d1{
+       
+       
+    }
+    #d1 img{
+       width:1000px;
+       height:250px;
+        border:2px solid black;
+        float:right;
+    }
+
+
+
+
+    #d2{
+        width:940px;
+        height:200px;
+        
+        padding:5px;
+        margin:5px;
+    }
+    #a2 {
+        
+        float:left;
+        margin:10px;
+        margin:10px;
+       
+        
+    }
+    #a2 img{
+        width:140px;
+        height:45px;
+         border:2px solid black;
+    }
+    #a2 span{
+        width:20px;
+        height:15px;
+        font-size:15px;
+        font-style:italic;
+        text-align:center;
+
+    }
+    #u1{
+        list-style:none;
+        font-style:italic;
+       text-decoration:underline;
+    }

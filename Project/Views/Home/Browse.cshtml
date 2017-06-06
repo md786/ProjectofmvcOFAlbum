@@ -1,0 +1,12 @@
+﻿@using Project.Models
+@model IEnumerable<Album>
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>Music Albums Available In @ViewBag.cat Category</h2>
+<h3>Count :@Model.Count()</h3>
+<br />
+@Html.Partial("~/Views/_AlbumDetailsid.cshtml",Model)
+
+<link href="~/Content/myprojectstylesheet.css" rel="stylesheet" />

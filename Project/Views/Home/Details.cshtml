@@ -1,0 +1,55 @@
+﻿@model Project.Models.Album
+
+<div>
+    <h4>Album</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbumTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArtistName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArtistName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+    </dl>
+</div>
+@using (Html.BeginForm("Index", "ShoppingCart",FormMethod.Post))
+{
+    @Html.HiddenFor(model=>model.Albumid)
+    <br />
+    @Html.Label("Quantity :")
+    @Html.TextBox("qty",1)
+    <br />
+    <br/>
+    <input type="submit" name="submit" value="submit" id="submit" />
+
+}
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Albumid }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

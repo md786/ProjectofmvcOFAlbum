@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.title = "Login";
+    Layout = "~/Views/Shared/_Second.cshtml";
+}
+
+
+@{
+    ViewBag.title = "Second";
+    Layout = "~/Views/Shared/_Second.cshtml";
+}
+
+<style>
+    body {
+        background: url("/Images//images.jpg") no-repeat center center fixed;
+        background-size: 100% 100%;
+        opacity: 20%;
+    }
+
+    }
+</style>
+<h2 style="text-align:center">Login</h2>
+<div class="container">
+    <div class="col-lg-4"></div>
+
+    <div class="col-lg-4">
+
+
+        @using (Html.BeginForm("login", "StoreManger", FormMethod.Post, new { @class = "navbar-form", style = "text-align:center;border:2px solid red;  height:250px; width:400px; background-color:aquamarine;" }))
+        {
+
+
+
+            <br />
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-user">
+
+                    </span>
+                </span>
+                <input class="form-control" placeholder="username" />
+
+            </div><br /><br />
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span>
+
+                    </span>
+                    <input type="password" placeholder="Password" class="form-control" />
+
+                </div><br /><br />
+                <input type="submit" class="btn btn-success" value="submit" />
+
+
+
+
+        }
+    </div>
+</div>
+
+
+
+
